@@ -14,7 +14,7 @@ const EmailSection = () => {
             email: e.target.email.value,
             subject: e.target.subject.value,
             message: e.target.message.value,
-        };
+        }
         const JSONdata = JSON.stringify(data);
         const endpoint = "/api/send";
 
@@ -24,7 +24,7 @@ const EmailSection = () => {
             method: "POST",
             // Tell the server we're sending JSON.
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
             // Body of the request is the JSON data we created above.
             body: JSONdata,
@@ -33,8 +33,9 @@ const EmailSection = () => {
         const response = await fetch(endpoint, options);
         const resData = await response.json();
 
+
         if (response.status === 200) {
-            console.log("Message sent.");
+            console.log("Mensagem enviada.");
             setEmailSubmitted(true);
         }
     };
@@ -47,7 +48,7 @@ const EmailSection = () => {
 
             <div className="z-10">
                 <h5 className="text-xl font-bold text-white my-2">
-                    Fale Comigo
+                    Fale Comigo!
                 </h5>
                 <p className="text-[#ADB7BE] mb-4 max-w-md">
                     {" "}
